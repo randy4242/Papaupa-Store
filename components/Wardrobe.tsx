@@ -157,7 +157,7 @@ const Wardrobe: React.FC<WardrobeProps> = ({ userGarments, addGarment }) => {
                         <span className="mt-2 text-sm">Creando modelo virtual...</span>
                     </div>
                 ) : aiGeneratedImage ? (
-                    <img src={`data:image/jpeg;base64,${aiGeneratedImage}`} alt="Modelo IA" className="h-full w-full object-cover rounded-lg"/>
+                    <img src={aiGeneratedImage.startsWith('http') ? aiGeneratedImage : `data:image/jpeg;base64,${aiGeneratedImage}`} alt="Modelo IA" className="h-full w-full object-cover rounded-lg"/>
                 ) : (
                     <div className="text-center text-gray-500 p-4">
                         <SparkleIcon className="h-12 w-12 mx-auto mb-2"/>
